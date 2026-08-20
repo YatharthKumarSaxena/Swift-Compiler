@@ -2157,8 +2157,3 @@ void yyfree (void * ptr )
 int yywrap() {
     return 1;
 }
-
-int main() {
-    while (yylex());
-    return 0;
-}
