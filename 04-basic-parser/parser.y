@@ -5,7 +5,7 @@
     int yyerror(const char *s);
 %}
 
-%token INTEGER_LITERAL 256
+include(`../common/parser_tokens.y')
 
 %%
 
