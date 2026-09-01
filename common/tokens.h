@@ -8,6 +8,11 @@ enum TokenType {
     BOOLEAN_LITERAL,
     CHARACTER_LITERAL,
 
+    /* Operators */
+    OPERATOR,
+    ASSIGN,
+    COMPARISON,
+
     IDENTIFIER,
     TYPE,
     KEYWORD,
@@ -20,7 +25,19 @@ enum TokenType {
     LTE,
 
     AND,
-    OR
+    OR,
+
+    ARROW
 };
+
+typedef union {
+    int int_val;
+    int bool_val;
+    double double_val;
+    char char_val;
+    char* str_val;
+} YYSTYPE;
+
+extern YYSTYPE yylval;
 
 #endif
