@@ -1,0 +1,7 @@
+include(`../05-parser-errors/rules/declaration-errors.y')
+include(`../05-parser-errors/rules/expression-errors.y')
+include(`../05-parser-errors/rules/control-flow-errors.y')
+include(`../05-parser-errors/rules/loop-errors.y')
+include(`../05-parser-errors/rules/function-errors.y')
+include(`../05-parser-errors/rules/array-errors.y')
+include(`../05-parser-errors/rules/struct-errors.y')

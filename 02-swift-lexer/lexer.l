@@ -27,8 +27,3 @@ include(`../03-lexical-errors/lexical_errors.l')
 int yywrap() {
     return 1;
 }
-
-int main() {
-    while (yylex() != 0);
-    return 0;
-}
