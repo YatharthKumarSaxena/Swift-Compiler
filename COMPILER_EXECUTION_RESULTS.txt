@@ -1,7 +1,521 @@
 ================================================================================
         SWIFT SUBSET COMPILER - COMPLETE EXECUTION & TEST RESULTS               
 ================================================================================
-Generated on: Mon Oct  5 06:38:09 PM IST 2026
+Generated on: Mon Oct  5 06:45:32 PM IST 2026
+
+--------------------------------------------------------------------------------
+TEST: Showcase: All Language Features (Specs 1 to 9 combined) (tests/showcase_all_features.swift)
+--------------------------------------------------------------------------------
+Source Code:
+// Swift Subset Compiler - All-in-One Comprehensive Showcase
+// Covers Specifications 1 through 9
+
+// 1. Primitive Types & 2. Type Inference & 3. Declarations (let/var)
+let intVal = 42
+let doubleVal = 3.14
+let boolVal = true
+let charVal = 'S'
+let strVal = "Swift"
+var mutableCount: Int = 10
+mutableCount = mutableCount + 5
+
+// 4. Operators: Arithmetic, Relational, Logical, String Concatenation
+let sum = intVal + mutableCount
+let isOk = (sum > 50) && boolVal
+let fullGreeting = strVal + " Compiler"
+
+// 5. Control Flow: if-else, switch-case-default
+if isOk {
+    print("Check Passed")
+} else {
+    print("Check Failed")
+}
+
+let choice = 1
+switch choice {
+    case 1:
+        print("Selected 1")
+    default:
+        print("Default Selected")
+}
+
+// 6. Loops: while, repeat-while, for-in
+var w = 0
+while w < 2 {
+    w = w + 1
+}
+
+var r = 1
+repeat {
+    r = r * 2
+} while r < 4
+
+for i in 1...3 {
+    print(i)
+}
+
+// 7. Functions: Named parameters, return types, Void
+func addNumbers(a: Int, b: Int) -> Int {
+    return a + b
+}
+
+func sayHi(target: String) -> Void {
+    print("Hi, " + target)
+}
+
+let res = addNumbers(a: 20, b: 30)
+sayHi(target: "Viva")
+
+// 8. Arrays: 1D fixed size, subscript notation
+var arr = [100, 200, 300]
+let elem = arr[0]
+arr[1] = 999
+print(arr[1])
+
+// 9. User-Defined Types: struct (Exact Assignment Spec)
+struct Point {
+    var x: Int
+    var y: Int
+}
+var p = Point(x: 3, y: 4)
+print(p.x)
+p.x = 10
+print(p.x)
+
+Compiler Execution Output:
+================================================================================
+           SWIFT SUBSET COMPILER (LEX & YACC / FLEX & BISON)                   
+================================================================================
+Compiling file: tests/showcase_all_features.swift
+
+
+================================ TOKEN STREAM ==================================
+Line    Token Type              Lexeme
+--------------------------------------------------------------------------------
+5       LET                     let
+5       IDENTIFIER              intVal
+5       ASSIGN                  =
+5       INT_LITERAL             42
+6       LET                     let
+6       IDENTIFIER              doubleVal
+6       ASSIGN                  =
+6       DOUBLE_LITERAL          3.14
+7       LET                     let
+7       IDENTIFIER              boolVal
+7       ASSIGN                  =
+7       BOOL_LITERAL            true
+8       LET                     let
+8       IDENTIFIER              charVal
+8       ASSIGN                  =
+8       CHAR_LITERAL            'S'
+9       LET                     let
+9       IDENTIFIER              strVal
+9       ASSIGN                  =
+9       STRING_LITERAL          "Swift"
+10      VAR                     var
+10      IDENTIFIER              mutableCount
+10      COLON                   :
+10      TYPE_INT                Int
+10      ASSIGN                  =
+10      INT_LITERAL             10
+11      IDENTIFIER              mutableCount
+11      ASSIGN                  =
+11      IDENTIFIER              mutableCount
+11      PLUS                    +
+11      INT_LITERAL             5
+14      LET                     let
+14      IDENTIFIER              sum
+14      ASSIGN                  =
+14      IDENTIFIER              intVal
+14      PLUS                    +
+14      IDENTIFIER              mutableCount
+15      LET                     let
+15      IDENTIFIER              isOk
+15      ASSIGN                  =
+15      LPAREN                  (
+15      IDENTIFIER              sum
+15      GT                      >
+15      INT_LITERAL             50
+15      RPAREN                  )
+15      AND                     &&
+15      IDENTIFIER              boolVal
+16      LET                     let
+16      IDENTIFIER              fullGreeting
+16      ASSIGN                  =
+16      IDENTIFIER              strVal
+16      PLUS                    +
+16      STRING_LITERAL          " Compiler"
+19      IF                      if
+19      IDENTIFIER              isOk
+19      LBRACE                  {
+20      PRINT                   print
+20      LPAREN                  (
+20      STRING_LITERAL          "Check Passed"
+20      RPAREN                  )
+21      RBRACE                  }
+21      ELSE                    else
+21      LBRACE                  {
+22      PRINT                   print
+22      LPAREN                  (
+22      STRING_LITERAL          "Check Failed"
+22      RPAREN                  )
+23      RBRACE                  }
+25      LET                     let
+25      IDENTIFIER              choice
+25      ASSIGN                  =
+25      INT_LITERAL             1
+26      SWITCH                  switch
+26      IDENTIFIER              choice
+26      LBRACE                  {
+27      CASE                    case
+27      INT_LITERAL             1
+27      COLON                   :
+28      PRINT                   print
+28      LPAREN                  (
+28      STRING_LITERAL          "Selected 1"
+28      RPAREN                  )
+29      DEFAULT                 default
+29      COLON                   :
+30      PRINT                   print
+30      LPAREN                  (
+30      STRING_LITERAL          "Default Selected"
+30      RPAREN                  )
+31      RBRACE                  }
+34      VAR                     var
+34      IDENTIFIER              w
+34      ASSIGN                  =
+34      INT_LITERAL             0
+35      WHILE                   while
+35      IDENTIFIER              w
+35      LT                      <
+35      INT_LITERAL             2
+35      LBRACE                  {
+36      IDENTIFIER              w
+36      ASSIGN                  =
+36      IDENTIFIER              w
+36      PLUS                    +
+36      INT_LITERAL             1
+37      RBRACE                  }
+39      VAR                     var
+39      IDENTIFIER              r
+39      ASSIGN                  =
+39      INT_LITERAL             1
+40      REPEAT                  repeat
+40      LBRACE                  {
+41      IDENTIFIER              r
+41      ASSIGN                  =
+41      IDENTIFIER              r
+41      STAR                    *
+41      INT_LITERAL             2
+42      RBRACE                  }
+42      WHILE                   while
+42      IDENTIFIER              r
+42      LT                      <
+42      INT_LITERAL             4
+44      FOR                     for
+44      IDENTIFIER              i
+44      IN                      in
+44      INT_LITERAL             1
+44      DOTDOTDOT               ...
+44      INT_LITERAL             3
+44      LBRACE                  {
+45      PRINT                   print
+45      LPAREN                  (
+45      IDENTIFIER              i
+45      RPAREN                  )
+46      RBRACE                  }
+49      FUNC                    func
+49      IDENTIFIER              addNumbers
+49      LPAREN                  (
+49      IDENTIFIER              a
+49      COLON                   :
+49      TYPE_INT                Int
+49      COMMA                   ,
+49      IDENTIFIER              b
+49      COLON                   :
+49      TYPE_INT                Int
+49      RPAREN                  )
+49      ARROW                   ->
+49      TYPE_INT                Int
+49      LBRACE                  {
+50      RETURN                  return
+50      IDENTIFIER              a
+50      PLUS                    +
+50      IDENTIFIER              b
+51      RBRACE                  }
+53      FUNC                    func
+53      IDENTIFIER              sayHi
+53      LPAREN                  (
+53      IDENTIFIER              target
+53      COLON                   :
+53      TYPE_STRING             String
+53      RPAREN                  )
+53      ARROW                   ->
+53      TYPE_VOID               Void
+53      LBRACE                  {
+54      PRINT                   print
+54      LPAREN                  (
+54      STRING_LITERAL          "Hi, "
+54      PLUS                    +
+54      IDENTIFIER              target
+54      RPAREN                  )
+55      RBRACE                  }
+57      LET                     let
+57      IDENTIFIER              res
+57      ASSIGN                  =
+57      IDENTIFIER              addNumbers
+57      LPAREN                  (
+57      IDENTIFIER              a
+57      COLON                   :
+57      INT_LITERAL             20
+57      COMMA                   ,
+57      IDENTIFIER              b
+57      COLON                   :
+57      INT_LITERAL             30
+57      RPAREN                  )
+58      IDENTIFIER              sayHi
+58      LPAREN                  (
+58      IDENTIFIER              target
+58      COLON                   :
+58      STRING_LITERAL          "Viva"
+58      RPAREN                  )
+61      VAR                     var
+61      IDENTIFIER              arr
+61      ASSIGN                  =
+61      LBRACKET                [
+61      INT_LITERAL             100
+61      COMMA                   ,
+61      INT_LITERAL             200
+61      COMMA                   ,
+61      INT_LITERAL             300
+61      RBRACKET                ]
+62      LET                     let
+62      IDENTIFIER              elem
+62      ASSIGN                  =
+62      IDENTIFIER              arr
+62      LBRACKET                [
+62      INT_LITERAL             0
+62      RBRACKET                ]
+63      IDENTIFIER              arr
+63      LBRACKET                [
+63      INT_LITERAL             1
+63      RBRACKET                ]
+63      ASSIGN                  =
+63      INT_LITERAL             999
+64      PRINT                   print
+64      LPAREN                  (
+64      IDENTIFIER              arr
+64      LBRACKET                [
+64      INT_LITERAL             1
+64      RBRACKET                ]
+64      RPAREN                  )
+67      STRUCT                  struct
+67      IDENTIFIER              Point
+67      LBRACE                  {
+68      VAR                     var
+68      IDENTIFIER              x
+68      COLON                   :
+68      TYPE_INT                Int
+69      VAR                     var
+69      IDENTIFIER              y
+69      COLON                   :
+69      TYPE_INT                Int
+70      RBRACE                  }
+71      VAR                     var
+71      IDENTIFIER              p
+71      ASSIGN                  =
+71      IDENTIFIER              Point
+71      LPAREN                  (
+71      IDENTIFIER              x
+71      COLON                   :
+71      INT_LITERAL             3
+71      COMMA                   ,
+71      IDENTIFIER              y
+71      COLON                   :
+71      INT_LITERAL             4
+71      RPAREN                  )
+72      PRINT                   print
+72      LPAREN                  (
+72      IDENTIFIER              p
+72      DOT                     .
+72      IDENTIFIER              x
+72      RPAREN                  )
+73      IDENTIFIER              p
+73      DOT                     .
+73      IDENTIFIER              x
+73      ASSIGN                  =
+73      INT_LITERAL             10
+74      PRINT                   print
+74      LPAREN                  (
+74      IDENTIFIER              p
+74      DOT                     .
+74      IDENTIFIER              x
+74      RPAREN                  )
+================================================================================
+
+
+================================ PARSING MESSAGES ==============================
+  [PARSER] Variable declaration (let with inference): intVal
+  [PARSER] Variable declaration (let with inference): doubleVal
+  [PARSER] Variable declaration (let with inference): boolVal
+  [PARSER] Variable declaration (let with inference): charVal
+  [PARSER] Variable declaration (let with inference): strVal
+  [PARSER] Variable declaration (var with type annotation): mutableCount: Int
+  [PARSER] Assignment to variable: mutableCount
+  [PARSER] Variable declaration (let with inference): sum
+  [PARSER] Variable declaration (let with inference): isOk
+  [PARSER] Variable declaration (let with inference): fullGreeting
+  [PARSER] Print statement: print("Check Passed")
+  [PARSER] Print statement: print("Check Failed")
+  [PARSER] Variable declaration (let with inference): choice
+  [PARSER] Switch statement on expression: choice
+  [PARSER] Print statement: print("Selected 1")
+  [PARSER] Print statement: print("Default Selected")
+  [PARSER] Default case in switch
+  [PARSER] Variable declaration (var with inference): w
+  [PARSER] Assignment to variable: w
+  [PARSER] Variable declaration (var with inference): r
+  [PARSER] Assignment to variable: r
+  [PARSER] Print statement: print(i)
+  [PARSER] Return statement with value: t12
+  [PARSER] Function declaration: addNumbers -> Int
+  [PARSER] Print statement: print(t13)
+  [PARSER] Function declaration: sayHi -> Void
+  [PARSER] Variable declaration (let with inference): res
+  [PARSER] Variable declaration (var with inference): arr
+  [PARSER] Variable declaration (let with inference): elem
+  [PARSER] Assignment to array element: arr[]
+  [PARSER] Print statement: print(t17)
+  [PARSER] Struct declaration: Point
+  [PARSER] Variable declaration (var with inference): p
+  [PARSER] Print statement: print(t19)
+  [PARSER] Assignment to struct member: p.x
+  [PARSER] Print statement: print(t20)
+  [PARSER] Program parsing completed successfully.
+================================================================================
+
+
+================================ SYMBOL TABLE ================================
+Identifier     Kind        Type              Scope     Line      
+------------------------------------------------------------------------------
+arr            var (mut)   [Int]             0         62        
+boolVal        let (const) Bool              0         8         
+charVal        let (const) Character         0         9         
+choice         let (const) Int               0         26        
+doubleVal      let (const) Double            0         7         
+elem           let (const) Int               0         63        
+fullGreeting   let (const) String            0         19        
+intVal         let (const) Int               0         6         
+isOk           let (const) Bool              0         16        
+mutableCount   var (mut)   Int               0         11        
+p              var (mut)   Point             0         72        
+r              var (mut)   Int               0         40        
+res            let (const) Int               0         58        
+strVal         let (const) String            0         10        
+sum            let (const) Int               0         15        
+w              var (mut)   Int               0         35        
+
+--- Functions ---
+func addNumbers(a: Int, b: Int) -> Int [Line 49]
+func sayHi(target: String) -> Void [Line 53]
+
+--- Structs ---
+struct Point {
+    var x: Int
+    var y: Int
+} [Line 71]
+==============================================================================
+
+
+======================== THREE ADDRESS CODE (TAC) ========================
+1:        intVal = 42
+2:        doubleVal = 3.140000
+3:        boolVal = true
+4:        charVal = 'S'
+5:        strVal = "Swift"
+6:        mutableCount = 10
+7:        t0 = mutableCount + 5
+8:        mutableCount = t0
+9:        t1 = intVal + mutableCount
+10:       sum = t1
+11:       t2 = sum > 50
+12:       t3 = t2 && boolVal
+13:       isOk = t3
+14:       t4 = strVal + " Compiler"
+15:       fullGreeting = t4
+16:       ifFalse isOk goto L0
+17:       print "Check Passed"
+18:       goto L1
+19:   L0:
+20:       print "Check Failed"
+21:   L1:
+22:       choice = 1
+23:       t5 = choice == 1
+24:       ifFalse t5 goto L3
+25:       print "Selected 1"
+26:       goto L2
+27:   L3:
+28:       print "Default Selected"
+29:   L2:
+30:       w = 0
+31:   L4:
+32:       t6 = w < 2
+33:       ifFalse t6 goto L5
+34:       t7 = w + 1
+35:       w = t7
+36:       goto L4
+37:   L5:
+38:       r = 1
+39:   L6:
+40:       t8 = r * 2
+41:       r = t8
+42:       t9 = r < 4
+43:       if t9 goto L6
+44:       i = 1
+45:   L7:
+46:       t10 = i <= 3
+47:       ifFalse t10 goto L8
+48:       print i
+49:       t11 = i + 1
+50:       i = t11
+51:       goto L7
+52:   L8:
+53:   func_addNumbers:
+54:       t12 = a + b
+55:       return t12
+56:       return
+57:   func_sayHi:
+58:       t13 = "Hi, " + target
+59:       print t13
+60:       return
+61:       param 20
+62:       param 30
+63:       t14 = call func_addNumbers, 2
+64:       res = t14
+65:       param "Viva"
+66:       call func_sayHi, 1
+67:       t15[0] = 100
+68:       t15[1] = 200
+69:       t15[2] = 300
+70:       arr = t15
+71:       t16 = arr[0]
+72:       elem = t16
+73:       arr[1] = 999
+74:       t17 = arr[1]
+75:       print t17
+76:       t18.x = 3
+77:       t18.y = 4
+78:       p = t18
+79:       t19 = p.x
+80:       print t19
+81:       p.x = 10
+82:       t20 = p.x
+83:       print t20
+==========================================================================
+
+
+>>> Compilation finished successfully with 0 errors.
+STATUS: Compilation SUCCEEDED without errors.
 
 --------------------------------------------------------------------------------
 TEST: Test 1: Primitives, Type Inference, Operators & String Concatenation (tests/test1_primitive_and_inference.swift)

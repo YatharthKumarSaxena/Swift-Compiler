@@ -54,6 +54,7 @@ run_test() {
 }
 
 echo "[2/3] Running test suite..."
+run_test "Showcase: All Language Features (Specs 1 to 9 combined)" "tests/showcase_all_features.swift" 0
 run_test "Test 1: Primitives, Type Inference, Operators & String Concatenation" "tests/test1_primitive_and_inference.swift" 0
 run_test "Test 2: Variable Declarations (let immutable vs var mutable)" "tests/test2_immutability_let_var.swift" 0
 run_test "Test 3: Control Flow (if, else, switch, case, default)" "tests/test3_control_flow.swift" 0
